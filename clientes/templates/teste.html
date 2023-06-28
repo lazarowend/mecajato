@@ -1,0 +1,33 @@
+<form action="{% url 'clientes' %}" method="POST"> {% csrf_token %}
+    <div class="col-md">
+        <p>Nome:</p>
+        <input type="text" class="form-control" placeholder="Primeiro nome" value="{{ nome }}" name="nome"><br>
+        <p>Sobrenome:</p>
+        <input type="text" class="form-control" placeholder="Sobrenome" value="{{ sobrenome }}" name="sobrenome"><br>
+        <p>E-mail:</p>
+        <input type="email" class="form-control" placeholder="nome@email.com" value="{{ email }}" name="email"><br>
+        <p>CPF:</p>
+        <input type="text" class="form-control" placeholder="___.___.___-__" value="{{ cpf }}" name="cpf">
+        <hr style="background-color:gray;">
+        <div class="add-carros">
+            <h3>Carros</h3>
+            <span class="btn-add-carros" onclick="add_carro()">+ Adicionar um carro</span>
+
+            <div id="form-carro">
+                {% for carro, placa, ano in carros %}
+                <br>
+                <div class='row'> 
+                    <div class='col-md'> 
+                        <input type='text' placeholder='carro' class='form-control' value="{{ carro }}" name='carro'>
+                    </div> 
+                    <div class='col-md'><input type='text' placeholder='Placa' class='form-control' value="{{ placa }}" name='placa'>
+                        </div> 
+                    <div class='col-md'>
+                        <input type='number' placeholder='Ano' class='form-control' value="{{ ano }}" name='ano'>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+    </div><br>
+    <input type="submit" value="Cadastrar" class="btn-principal">
+</form>

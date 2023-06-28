@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block 'head' %}
+
+{% endblock %}
+
+{% block 'dashboard' %}
+<br>
+<br>
+<div class="container-fluid w-75">
+    <button type="button" class="btn btn-primary"><a href="{% url 'gerar_os' servico.identificador %}" class="text-decoration-none text-white">Gerar OS</a></button>
+    <br>
+    <br>
+    <p>{{ servico.protocolo }}</p>
+{% endblock %}
