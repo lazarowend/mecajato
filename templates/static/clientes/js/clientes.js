@@ -16,6 +16,7 @@ function exibir_form(tipo) {
     }
 }
 
+
 function dados_cliente() {
     cliente = document.getElementById("select_cliente")
     id_cliente = cliente.value
@@ -79,6 +80,7 @@ function dados_cliente() {
         
     })
 }
+
 
 function update_cliente(){
     nome = document.getElementById("nome").value
